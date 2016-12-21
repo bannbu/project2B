@@ -272,21 +272,13 @@ function connectionCheck($conn){
 
 //コメント削除関数開始
 function contentDelete($conn){
-  echo("ｃｄ1行目<br>");
   //$conn = DBconnect();
-  echo("ｃｄ2行目<br>");
   $num = $conn->query("SELECT content_id FROM textcontent");
-  echo("ｃｄ3行目<br>");
   $numId = $num->fetch();
-  echo("ｃｄ4行目<br>");
 	$c = $conn->prepare("DELETE FROM textcontent WHERE content_id = :numId");
-  echo("ｃｄ5行目<br>");
   $c->execute(array(":numId"=>$numId["content_id"]));
-  echo("ｃｄ4行目aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>");
   returnCommentDelete($conn,$numId["content_id"]);
-    echo("ｃｄ５行目");
   retweetDelete($conn,$numId["content_id"]);
-    echo("ｃｄ６行目");
 }
 //コメント削除関数終わり
 
