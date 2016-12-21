@@ -119,16 +119,9 @@ function addReturnComment($content_id,$personalData,$returnContent){//五十件�
 	$date = date("Y-m-d H:i:s"); // 2001-03-10 17:16:18 (MySQL の DATETIME フォーマット)
 	//$conn ->exec("INSERT INTO textcontent VALUES(NULL,'$Content','$date','$userID')");//コメント挿入
 
-  $c = $conn->query("SELECT COUNT(textContent_id) AS count FROM returntextDB WHERE textContent_id = $content_id");
-  $count = $c->fetch();
-  	if($count["count"] <= 5){//5件に達したら一つ削除
-      $statment=$conn->prepare(
-      "INSERT INTO returntextDB VALUES(NULL,:content_id,:returnContent,:date,:personalData)");
-      $statment->execute(array(":content_id"=>$content_id,":returnContent"=>$returnContent,":date"=>$date,":personalData"=>$personalData));
-
-  	}
-
-
+	$statment=$conn->prepare(
+	"INSERT INTO returntextDB VALUES(NULL,:content_id,:returnContent,:date,:personalData)");
+	$statment->execute(array(":content_id"=>$content_id,":returnContent"=>$returnContent,":date"=>$date,":personalData"=>$personalData));
   }catch(Exception $e){
     return false;
   }
@@ -156,7 +149,7 @@ return null;
 //リツイート返信検索開始
 function searchReturnOne($return_id){
   $conn = DBconnect();
-  $data = $conn->query("SELECT returnContent,date,personalData FROM returntextDB WHERE returnContent_id = $return_id");
+  $data = $conn->query("SELECT returnContent,textContent_id,date,personalData FROM returntextDB WHERE returnContent_id = $return_id");
   return $data;
 }
 //リツイート返信検索終わり
@@ -279,13 +272,21 @@ function connectionCheck($conn){
 
 //コメント削除関数開始
 function contentDelete($conn){
+  echo("ｃｄ1行目<br>");
   //$conn = DBconnect();
+  echo("ｃｄ2行目<br>");
   $num = $conn->query("SELECT content_id FROM textcontent");
+  echo("ｃｄ3行目<br>");
   $numId = $num->fetch();
+  echo("ｃｄ4行目<br>");
 	$c = $conn->prepare("DELETE FROM textcontent WHERE content_id = :numId");
+  echo("ｃｄ5行目<br>");
   $c->execute(array(":numId"=>$numId["content_id"]));
+  echo("ｃｄ4行目aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa<br>");
   returnCommentDelete($conn,$numId["content_id"]);
+    echo("ｃｄ５行目");
   retweetDelete($conn,$numId["content_id"]);
+    echo("ｃｄ６行目");
 }
 //コメント削除関数終わり
 

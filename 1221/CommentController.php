@@ -9,7 +9,6 @@ sessionProtect($_SESSION["userID"]);
 
 	$content = nl2br(htmlspecialchars($content,ENT_QUOTES));
 
-  //変更要素
 	// if($ContentCheck != "UTF-8"){
 	// 	$content = "";
 	// }
