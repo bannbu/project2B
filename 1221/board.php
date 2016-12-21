@@ -83,6 +83,9 @@ sessionProtect($_SESSION["userID"]);
               echo '<div class="textContent">';
                 echo $r["returnContent"].'<br />';
               echo '</div>';
+              echo '<div class="goReplyPage">';
+                echo '<a href="replyBoard.php?content_id='.$r["textContent_id"].'">元の投稿を表示</a>';
+              echo '</div>';
             echo '</div>';
           }
 
