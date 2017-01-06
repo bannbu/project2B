@@ -20,14 +20,6 @@ sessionProtect($_SESSION["userID"]);
 <script>
 
 $(function(){
-  //ログインページでエンターキーを押すとログイン関数呼び出し
-  // $(document).on("keydown",".inputForm",function(e){
-  //   if(e.altkey){
-  //     if(e.keyCode == 13){
-  //       console.log("waaai");
-  //     }
-  //   }
-  // });
   //シフトキーを押しながらエンターで投稿
   $(".inputForm").keypress(function(e){
     if(e.shiftKey){
