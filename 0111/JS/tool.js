@@ -17,7 +17,8 @@ function loginCheck(){
       url: "login.php",
       data:{
         'userID': id,
-        'password': pass}
+        'password': pass
+        }
       }).done(function (html){
         $('.showError').append(html);
     }).fail(function(html){

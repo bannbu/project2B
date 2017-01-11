@@ -6,7 +6,23 @@
     <link rel="stylesheet" href="./CSS/login.css">
     <script src="./JS/jquery-2.1.3.js"></script>
     <script src="./JS/tool.js"></script>
+<script>
+    $(function(){
+      //ログインページでエンターキーを押すとログイン関数呼び出し
+      $("#uid").keypress(function(e){
+        if(e.which == 13){
+          loginCheck();
+        }
+      });
 
+      $("#pss").keypress(function(e){
+        if(e.which == 13){
+          loginCheck();
+        }
+      });
+
+    });
+</script>
 </head>
 <body>
 <div class="wrap">

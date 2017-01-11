@@ -17,6 +17,22 @@ sessionProtect($_SESSION["userID"]);
   <script src="./JS/jquery-2.1.3.js"></script>
   <script src="./JS/tool.js"></script>
 </head>
+<script>
+
+$(function(){
+  //シフトキーを押しながらエンターで投稿
+  $(".inputForm").keypress(function(e){
+    if(e.shiftKey){
+      console.log("shift");
+      if(e.which == 13){
+        sendComment();
+        return false;
+      }
+    }
+  });
+});
+
+  </script>
 <body>
 <header>
   <nav class="navFlex">
@@ -114,7 +130,7 @@ sessionProtect($_SESSION["userID"]);
   <form action="logout.php" method="post">
     <input type="submit" value="ログアウト" />
   </form>
-  プロジェクト演習２
+  <span>プロジェクト演習２</span>
 </footer>
 </body>
 </html>

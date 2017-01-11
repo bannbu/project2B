@@ -12,6 +12,21 @@ sessionProtect($_SESSION["userID"]);
   <link rel="stylesheet" href="./CSS/reply.css">
     <script src="./JS/tool.js"></script>
     <script src="./JS/jquery-2.1.3.js"></script>
+    <script>
+    $(function(){
+      $(".inputForm").keypress(function(e){
+        if(e.shiftKey){
+          console.log("shift");
+          if(e.which == 13){
+            var id = $("[name = content_id]").val();
+            // console.log(id);
+            sendReply(id);
+            return false;
+          }
+        }
+      });
+    });
+    </script>
 </head>
 <body>
 <header>
