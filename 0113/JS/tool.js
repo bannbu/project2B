@@ -89,6 +89,10 @@ function sendComment(){
   }
 //コメント送信関数終了
 
+function linkToReplyPage(id){
+  window.location.href = "replyBoard.php?content_id=" + id;
+}
+
 //返信送信関数
   function sendReply(id){//$_GET["content_id"]を引数に持たせているだけで、動きはコメント送信関数と一緒
       var str = $(".inputForm").val();

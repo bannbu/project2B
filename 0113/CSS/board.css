@@ -130,15 +130,31 @@
   /*color: white;*/
   font-size: 20px;
 }
+/*デザイン上の改行はbrを使わないほうがよいらしいので、スタイルシート側で改行を行う*/
+.textContent:before{
+  content: "\A" ;
+}
+.goReplyPage:before{
+  content: "\A" ;
+}
 
 .accountInfo{
   font-size: 16px;
 }
 
+.textContent{
+  /*Firefox用*/
+   word-wrap:break-word;
+   /*Chrome用*/
+   word-break: break-word;
+}
+
 .goReplyPage{
   text-align: right;
 }
-.goReplyPage a{
+
+
+.link:first-child{
   margin-right:20px;
 }
 
@@ -147,4 +163,5 @@ footer{
   background-color: blue;
   text-align: center;
   bottom: 0px;
+  color: white;
 }
