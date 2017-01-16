@@ -3,19 +3,19 @@ session_start();
 require "tool.php";
 sessionProtect($_SESSION["userID"]);
 
-// ini_set("display_errors", 0);
-// ini_set("display_startup_errors", 0);
-// error_reporting(E_ALL);
-
 ?>
 <!DOCTYPE html>
 <html>
 <head>
   <title>コメント一覧</title>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="./CSS/board.css">
+  <!-- <link rel="stylesheet" href="./CSS/board.css"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="./CSS/boardMobile.css" rel="stylesheet" type="text/css" media="screen and (min-width: 320px) and (max-width:480px)" >
+  <link href="./CSS/board.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" >
   <script src="./JS/jquery-2.1.3.js"></script>
   <script src="./JS/tool.js"></script>
+  <script src="./JS/board.js"></script>
 </head>
 <script>
 
@@ -61,33 +61,31 @@ $(function(){
       <div class="showError">
       </div>
     </div>
+    <div id="contentArea">
 <?php
-
-    // $data = searchTextContent();
     $timeLineData = searchTimeLine();
-    // $data2 = replyCount($r["content_id"]);
-
     foreach ($timeLineData as $r) {
       // $num = commentCount($r["content_id"]);
         if($r['content_id'] != null){
           $num = commentCount($r["content_id"]);
           // var_dump($num);
           echo '<div class="content">';
+            echo '<input type="hidden" name ="content_id" value = '. $r["content_id"] .'>';
             echo '<div class="accountInfo">';
-              echo  'レスNo：'.$r["content_id"].' 投稿日時：'.$r["date"].' 学生番号：'.$r["personalData"].'<br />';
+              echo  'レスNo：'.$r["content_id"].' 投稿日時：'.$r["date"].' 学生番号：'.$r["personalData"];
+              echo "<hr>";
             echo '</div>';
             echo '<div class="textContent">';
-              echo $r["contentData"].'<br />';
+              echo $r["contentData"];
             echo '</div>';
             echo '<div class="goReplyPage">';
-              echo '<a href="replyBoard.php?content_id='.$r["content_id"].'">返信画面へ飛ぶ</a>';
-              echo '<input type="button" class="replyDisplay'.$r["content_id"].'" name="'.$r["content_id"].'" onclick="showReply('.$r["content_id"].','.$num["count"].')" value="'.$num["count"].'件の返信">';
+              // echo '<a href="replyBoard.php?content_id='.$r["content_id"].'">返信画面へ移動する</a>';
+              echo '<input type="button" class="link" onclick="linkToReplyPage('.$r["content_id"].')" value = "返信画面へ移動する">';
+              echo '<input type="button"  class="link replyDisplay'.$r["content_id"].'" name="'.$r["content_id"].'" onclick="showReply('.$r["content_id"].','.$num["count"].')" value="'.$num["count"].'件の返信">';
               echo '<div class="add'.$r["content_id"].'">';
               echo '</div>';
             echo '</div>';
           echo '</div>';
-          // echo("content");
-          // echo($r['content_id'].":::::::::::::".$r['date']);
         }else{
           $data = searchReturnOne($r["return_id"]);
           foreach ($data as $r) {
@@ -104,26 +102,10 @@ $(function(){
               echo '</div>';
             echo '</div>';
           }
-
       }
-
-      // $num = commentCount($r["content_id"]);
-      // echo '<div class="content">';
-      //   echo '<div class="accountInfo">';
-      //     echo  'レスNo：'.$r["content_id"].' 投稿日時：'.$r["date"].' 学生番号：'.$r["personalData"].'<br />';
-      //   echo '</div>';
-      //   echo '<div class="textContent">';
-      //     echo $r["contentData"].'<br />';
-      //   echo '</div>';
-      //   echo '<div class="goReplyPage">';
-      //     echo '<a href="replyBoard.php?content_id='.$r["content_id"].'">返信画面へ飛ぶ</a>';
-      //     echo '<input type="button" class="replyDisplay'.$r["content_id"].'" name="'.$r["content_id"].'" onclick="showReply('.$r["content_id"].','.$num[0].')" value="'.$num[0].'件の返信">';
-      //     echo '<div class="add'.$r["content_id"].'">';
-      //     echo '</div>';
-      //   echo '</div>';
-      // echo '</div>';
     }
 ?>
+    </div>
   </div>
 </div>
 <footer>

@@ -301,7 +301,19 @@ function getReturnComment($return_id){
 
 }
 
+function checkNewComment(){
+  $conn = DBconnect();
+  $data = $conn->query("SELECT content_id FROM textcontent ORDER BY content_id DESC");
+  $data = $data->fetch();
+  return $data;
+}
 
+function addNewComment($content_id){
+  $conn = DBconnect();
+  $data = $conn->query("SELECT content_id,contentData,date,personalData FROM textcontent WHERE content_id > $content_id ORDER BY content_id DESC");
+  // $data = $data->fetchAll();
+  return $data;
+}
 
 //UPDATE textcontent SET contentData = 'aiueo' WHERE content_id = 1
 

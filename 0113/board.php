@@ -68,6 +68,7 @@ $(function(){
           $num = commentCount($r["content_id"]);
           // var_dump($num);
           echo '<div class="content">';
+            echo '<input type="hidden" name ="content_id" value = '. $r["content_id"] .'>';
             echo '<div class="accountInfo">';
               echo  'レスNo：'.$r["content_id"].' 投稿日時：'.$r["date"].' 学生番号：'.$r["personalData"];
               echo "<hr>";

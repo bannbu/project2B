@@ -73,8 +73,7 @@ function sendComment(){
     var str = $(".inputForm").val();//テキストエリアの値を取得
     if(!str.match(/\S/g)){//空白だった場合の処理
       $(".inputForm").val("");
-      $(".showError > span").remove();//spanの値を削除
-      $(".showError").append("<span>空白での投稿はできません</span>");//エラーメッセージを、事前に用意しておいた空のdivに表示する
+      $(".showError").html("<span>空白での投稿はできません</span>");//エラーメッセージを、事前に用意しておいた空のdivに表示する
     }else{//文字が入力されていた場合の処理
       $(".sendText").attr('disabled',true);//二重投稿防止のためにボタンを無効化する
       $.ajax({
@@ -89,13 +88,16 @@ function sendComment(){
   }
 //コメント送信関数終了
 
+function linkToReplyPage(id){
+  window.location.href = "replyBoard.php?content_id=" + id;
+}
+
 //返信送信関数
   function sendReply(id){//$_GET["content_id"]を引数に持たせているだけで、動きはコメント送信関数と一緒
       var str = $(".inputForm").val();
       if(!str.match(/\S/g)){
         $(".inputForm").val("");
-        $(".showError > span").remove();
-        $(".showError").append("<span>空白での投稿はできません</span>");
+        $(".showError").html("<span>空白での投稿はできません</span>");
       }else{
         $(".sendText").attr('disabled',true);
         $.ajax({

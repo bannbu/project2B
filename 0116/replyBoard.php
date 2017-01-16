@@ -9,7 +9,10 @@ sessionProtect($_SESSION["userID"]);
 <head>
   <title>返信ページ</title>
   <meta charset="utf-8" />
-  <link rel="stylesheet" href="./CSS/reply.css">
+  <!-- <link rel="stylesheet" href="./CSS/replyBoard.css"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link href="./CSS/replyBoardMobile.css" rel="stylesheet" type="text/css" media="screen and (min-width: 320px) and (max-width:480px)" >
+  <link href="./CSS/replyBoard.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" >
     <script src="./JS/tool.js"></script>
     <script src="./JS/jquery-2.1.3.js"></script>
     <script>
@@ -68,10 +71,11 @@ sessionProtect($_SESSION["userID"]);
       foreach ($data as $r) {
         echo '<div class="reply">';
           echo '<div class="accountInfo">';
-            echo  '返信No：'.$i.' 投稿日時：'.$r["date"].' 学生番号：'.$r["personalData"].'<br />';
+            echo  '返信No：'.$i.' 投稿日時：'.$r["date"].' 学生番号：'.$r["personalData"];
           echo '</div>';
+          echo '<hr>';
           echo '<div class="textContent">';
-            echo $r["returnContent"].'<br />';
+            echo $r["returnContent"];
           echo '</div>';
           echo '<div class="share">';
             echo '<form action="ReTweetController.php" method="post">';
