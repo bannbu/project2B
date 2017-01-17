@@ -15,15 +15,15 @@ $.ajax({
   // datatype: "json",
   success: function(data){
     // $('.showError').html(html);
-    // $("#contentArea").prepend(data);
+    $("#contentArea").prepend(data);
     console.log(data);
-  if(data !== null){
-    console.log(data);
-    console.log("success");
-    for(var i = 0; i < data.length;i++){
-      $("#contentArea").prepend(data[i].content_id);
-    }
-  }
+  // if(data !== null){
+  //   console.log(data);
+  //   console.log("success");
+  //   for(var i = 0; i < data.length;i++){
+  //     $("#contentArea").prepend(data[i].content_id);
+  //   }
+  // }
 
   }
 });

@@ -309,15 +309,11 @@ function checkNewComment(){
   return $data;
 }
 
-//この関数とsearchNewComment.phpを色々やって、JSONで返ってくるようにしたい
+
 function addNewComment($content_id){
   $conn = DBconnect();
-  // $data = $conn->query("SELECT content_id,contentData,date,personalData FROM textcontent WHERE content_id > $content_id ORDER BY content_id DESC");
-  $data = $conn->prepare("SELECT content_id,contentData,date,personalData FROM textcontent WHERE content_id > $content_id ORDER BY content_id DESC");
-  $data->execute();
-  $dataa = $data->fetchAll();
-  // $data = $data->fetchAll();
-  return $dataa;
+  $data = $conn->query("SELECT content_id,contentData,date,personalData FROM textcontent WHERE content_id > $content_id");
+  return $data;
 }
 
 //UPDATE textcontent SET contentData = 'aiueo' WHERE content_id = 1
