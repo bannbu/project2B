@@ -54,6 +54,13 @@
 #notice{
   padding-top: 10px;
   text-align: center;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.reloadButton{
+  width: 100%;
 }
 
 .top{

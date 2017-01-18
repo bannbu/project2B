@@ -73,8 +73,7 @@ function sendComment(){
     var str = $(".inputForm").val();//テキストエリアの値を取得
     if(!str.match(/\S/g)){//空白だった場合の処理
       $(".inputForm").val("");
-      $(".showError > span").remove();//spanの値を削除
-      $(".showError").append("<span>空白での投稿はできません</span>");//エラーメッセージを、事前に用意しておいた空のdivに表示する
+      $(".showError").html("<span>空白での投稿はできません</span>");//エラーメッセージを、事前に用意しておいた空のdivに表示する
     }else{//文字が入力されていた場合の処理
       $(".sendText").attr('disabled',true);//二重投稿防止のためにボタンを無効化する
       $.ajax({
@@ -98,8 +97,7 @@ function linkToReplyPage(id){
       var str = $(".inputForm").val();
       if(!str.match(/\S/g)){
         $(".inputForm").val("");
-        $(".showError > span").remove();
-        $(".showError").append("<span>空白での投稿はできません</span>");
+        $(".showError").html("<span>空白での投稿はできません</span>");
       }else{
         $(".sendText").attr('disabled',true);
         $.ajax({

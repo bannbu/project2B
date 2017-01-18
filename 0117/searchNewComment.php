@@ -7,7 +7,7 @@ $id = checkNewComment();//DB上の最新のcontent_idを取得 *新規関数
 
 $count = $id["content_id"] - $content_id;//DB上の最新から、board.php上の最新のcontent_idを引く。1以上なら新規投稿あり。
 
-echo '<input type="button" value="'. $count .'件の新着投稿があります" onclick="reload();">';//
+echo '<input type="button" class="reloadButton" value="'. $count .'件の新着投稿があります" onclick="reload();">';//
 
 // $users = array();//初期化
 // if($count >= 1){

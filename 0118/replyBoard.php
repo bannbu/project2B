@@ -53,6 +53,7 @@ sessionProtect($_SESSION["userID"]);
             echo 'レスNo:'.$r["content_id"].'　投稿日時：'.$r["date"].'　学生番号：'.$r["personalData"];
           ?>
         </div>
+          <hr>
         <div class="textContent">
         <!-- <br /> -->
           <?php

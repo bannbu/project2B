@@ -301,7 +301,20 @@ function getReturnComment($return_id){
 
 }
 
+//DB上の最新のcontent_idを取得 *新規関数
+function checkNewComment(){
+  $conn = DBconnect();
+  $data = $conn->query("SELECT content_id FROM textcontent ORDER BY content_id DESC");
+  $data = $data->fetch();
+  return $data;
+}
 
+
+function addNewComment($content_id){
+  $conn = DBconnect();
+  $data = $conn->query("SELECT content_id,contentData,date,personalData FROM textcontent WHERE content_id > $content_id");
+  return $data;
+}
 
 //UPDATE textcontent SET contentData = 'aiueo' WHERE content_id = 1
 

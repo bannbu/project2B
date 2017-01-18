@@ -15,6 +15,7 @@ sessionProtect($_SESSION["userID"]);
   <link href="./CSS/board.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" >
   <script src="./JS/jquery-2.1.3.js"></script>
   <script src="./JS/tool.js"></script>
+  <script src="./JS/board.js"></script>
 </head>
 <script>
 
@@ -60,6 +61,10 @@ $(function(){
       <div class="showError">
       </div>
     </div>
+    <!-- <div id="notice">
+
+    </div> -->
+    <div id="contentArea">
 <?php
     $timeLineData = searchTimeLine();
     foreach ($timeLineData as $r) {
@@ -78,8 +83,8 @@ $(function(){
             echo '</div>';
             echo '<div class="goReplyPage">';
               // echo '<a href="replyBoard.php?content_id='.$r["content_id"].'">返信画面へ移動する</a>';
-              echo '<input type="button" class="link" onclick="linkToReplyPage('.$r["content_id"].')" value = "返信画面へ移動する">';
-              echo '<input type="button"  class="link replyDisplay'.$r["content_id"].'" name="'.$r["content_id"].'" onclick="showReply('.$r["content_id"].','.$num["count"].')" value="'.$num["count"].'件の返信">';
+              echo '<input type="button" class="link btn" onclick="linkToReplyPage('.$r["content_id"].')" value = "返信画面へ移動">';
+              echo '<input type="button"  class="link btn replyDisplay'.$r["content_id"].'" name="'.$r["content_id"].'" onclick="showReply('.$r["content_id"].','.$num["count"].')" value="'.$num["count"].'件の返信">';
               echo '<div class="add'.$r["content_id"].'">';
               echo '</div>';
             echo '</div>';
@@ -88,12 +93,13 @@ $(function(){
           $data = searchReturnOne($r["return_id"]);
           foreach ($data as $r) {
             echo '<div class="shareBoard">';
-            echo "<span><b>共有されたコメント</b>  </span>";
+            echo "<span><b>共有されたコメント</b></span>";
               echo '<div class="accountInfo">';
-                echo  '投稿日時：'.$r["date"].' 学生番号：'.$r["personalData"].'<br />';
+                echo  '投稿日時：'.$r["date"].' 学生番号：'.$r["personalData"];
               echo '</div>';
+              echo '<hr>';
               echo '<div class="textContent">';
-                echo $r["returnContent"].'<br />';
+                echo $r["returnContent"];
               echo '</div>';
               echo '<div class="goReplyPage">';
                 echo '<a href="replyBoard.php?content_id='.$r["textContent_id"].'">元の投稿を表示</a>';
@@ -103,6 +109,7 @@ $(function(){
       }
     }
 ?>
+    </div>
   </div>
 </div>
 <footer>
