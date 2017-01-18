@@ -25,8 +25,8 @@ if($count >= 1){
       echo '</div>';
       echo '<div class="goReplyPage">';
         // echo '<a href="replyBoard.php?content_id='.$r["content_id"].'">返信画面へ移動する</a>';
-        echo '<input type="button" class="link" onclick="linkToReplyPage('.$r["content_id"].')" value = "返信画面へ移動する">';
-        echo '<input type="button"  class="link replyDisplay'.$r["content_id"].'" name="'.$r["content_id"].'" onclick="showReply('.$r["content_id"].','.$num["count"].')" value="'.$num["count"].'件の返信">';
+        echo '<input type="button" class="link btn"  name="'. $r["content_id"] .'" onclick="linkToReplyPage('.$r["content_id"].')" value = "返信画面へ移動">';
+        echo '<input type="button"  class="link btn replyDisplay'.$r["content_id"].'" name="'.$r["content_id"].'" onclick="showReply('.$r["content_id"].','.$num["count"].')" value="'.$num["count"].'件の返信">';
         echo '<div class="add'.$r["content_id"].'">';
         echo '</div>';
       echo '</div>';

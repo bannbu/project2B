@@ -119,9 +119,16 @@ function addReturnComment($content_id,$personalData,$returnContent){//五十件�
 	$date = date("Y-m-d H:i:s"); // 2001-03-10 17:16:18 (MySQL の DATETIME フォーマット)
 	//$conn ->exec("INSERT INTO textcontent VALUES(NULL,'$Content','$date','$userID')");//コメント挿入
 
-	$statment=$conn->prepare(
-	"INSERT INTO returntextDB VALUES(NULL,:content_id,:returnContent,:date,:personalData)");
-	$statment->execute(array(":content_id"=>$content_id,":returnContent"=>$returnContent,":date"=>$date,":personalData"=>$personalData));
+
+  $c = $conn->query("SELECT COUNT(returnContent_id) AS count FROM returntextDB");
+  $count = $c->fetch();
+    if($count["count"] <= 49){//50件に達したら一つ削除
+      $statment=$conn->prepare(
+      "INSERT INTO returntextDB VALUES(NULL,:content_id,:returnContent,:date,:personalData)");
+      $statment->execute(array(":content_id"=>$content_id,":returnContent"=>$returnContent,":date"=>$date,":personalData"=>$personalData));
+
+    }
+
   }catch(Exception $e){
     return false;
   }
