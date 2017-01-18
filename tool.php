@@ -319,7 +319,7 @@ function checkNewComment(){
 
 function addNewComment($content_id){
   $conn = DBconnect();
-  $data = $conn->query("SELECT content_id,contentData,date,personalData FROM textcontent WHERE content_id > $content_id");
+  $data = $conn->query("SELECT content_id,contentData,date,personalData FROM textcontent WHERE content_id > $content_id ORDER BY content_id DESC");
   return $data;
 }
 
