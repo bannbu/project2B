@@ -61,6 +61,9 @@ $(function(){
       <div class="showError">
       </div>
     </div>
+    <div id="notice">
+
+    </div>
     <div id="contentArea">
 <?php
     $timeLineData = searchTimeLine();
@@ -90,12 +93,13 @@ $(function(){
           $data = searchReturnOne($r["return_id"]);
           foreach ($data as $r) {
             echo '<div class="shareBoard">';
-            echo "<span><b>共有されたコメント</b>  </span>";
+            echo "<span><b>共有されたコメント</b></span>";
               echo '<div class="accountInfo">';
-                echo  '投稿日時：'.$r["date"].' 学生番号：'.$r["personalData"].'<br />';
+                echo  '投稿日時：'.$r["date"].' 学生番号：'.$r["personalData"];
               echo '</div>';
+              echo '<hr>';
               echo '<div class="textContent">';
-                echo $r["returnContent"].'<br />';
+                echo $r["returnContent"];
               echo '</div>';
               echo '<div class="goReplyPage">';
                 echo '<a href="replyBoard.php?content_id='.$r["textContent_id"].'">元の投稿を表示</a>';

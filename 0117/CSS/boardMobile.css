@@ -96,6 +96,11 @@ header > span{
   /*font-style: oblique;*/
 }
 
+#notice{
+  padding-top: 10px;
+  text-align: center;
+}
+
 .content{
   padding: 20px;
   margin-top: 15px;

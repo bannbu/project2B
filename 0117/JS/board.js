@@ -14,8 +14,8 @@ $.ajax({
   data: 'content_id='+ id,
   // datatype: "json",
   success: function(data){
-    // $('.showError').html(html);
-    $("#contentArea").prepend(data);
+    $('#notice').html(data);
+    // $("#contentArea").prepend(data);
     console.log(data);
   // if(data !== null){
   //   console.log(data);
@@ -28,4 +28,8 @@ $.ajax({
   }
 });
 // console.log(id);
+}
+
+function reload(){
+  window.location.reload(true);
 }

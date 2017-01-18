@@ -50,6 +50,12 @@
   /*background-color: rgb(16, 221, 241);*/
   /*background-color: white;*/
 }
+
+#notice{
+  padding-top: 10px;
+  text-align: center;
+}
+
 .top{
   margin-top: 50px;
   text-align: center;
@@ -130,6 +136,12 @@
   /*color: white;*/
   font-size: 20px;
 }
+/*.reply{
+  width: 80%;
+  text-align: right;
+}*/
+
+
 /*デザイン上の改行はbrを使わないほうがよいらしいので、スタイルシート側で改行を行う*/
 .textContent:before{
   content: "\A" ;
