@@ -52,7 +52,8 @@ header > span{
   margin-right: 10px;
   background-color: white;
   border-radius: 20px;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
+  border: none;
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -109,7 +110,10 @@ header > span{
   margin-right: 15px;
 }
 
-
+.share form{
+  padding-right: 10px;
+  text-align: right;
+}
 
 .shareBoard{
   margin-left: 15px;

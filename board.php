@@ -35,7 +35,7 @@ $(function(){
   </script>
 <body>
 <header>
-  <nav class="navFlex">
+  <nav class="navFlex" name="top">
     <a href="#">マイページ</a>
     <a href="board.php">タイムライン</a>
     <?php
@@ -112,6 +112,10 @@ $(function(){
     </div>
   </div>
 </div>
+<div class="back">
+  <a href="#top">一番上に戻る</a>
+</div>
+
 <footer>
   <form action="logout.php" method="post">
     <input type="submit" value="ログアウト" />
