@@ -11,7 +11,7 @@ sessionProtect($_SESSION["userID"]);
   <meta charset="utf-8" />
   <!-- <link rel="stylesheet" href="./CSS/replyBoard.css"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link href="./CSS/replyBoardMobile.css" rel="stylesheet" type="text/css" media="screen and (min-width: 320px) and (max-width:480px)" >
+  <link href="./CSS/replyBoardMobile.css" rel="stylesheet" type="text/css" media="screen and (max-width:480px)" >
   <link href="./CSS/replyBoard.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" >
     <script src="./JS/tool.js"></script>
     <script src="./JS/jquery-2.1.3.js"></script>
@@ -34,8 +34,8 @@ sessionProtect($_SESSION["userID"]);
 <body>
 <header>
   <nav class="navFlex">
-    <a href="#">マイページ</a>
-    <a href="board.php">タイムライン</a>
+    <!-- <a href="#">マイページ</a>
+    <a href="board.php">タイムライン</a> -->
     <?php
     echo "<span>ログイン中:".$_SESSION["userID"]."</span>";
       ?>
@@ -82,7 +82,7 @@ sessionProtect($_SESSION["userID"]);
             echo '<form action="ReTweetController.php" method="post">';
               echo '<input type="hidden" name="returnCommentID" value='.$r["returnContent_id"].' />';
               echo '<input type="hidden" name="returnContentID" value='.$_GET["content_id"].' />';
-              echo '<input type="submit" value="このコメントを共有する" />';
+              echo '<input type="submit" class="shareButton" value="このコメントを共有する" />';
             echo '</form>';
           echo '</div>';
         echo '</div>';

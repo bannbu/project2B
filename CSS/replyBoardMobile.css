@@ -147,7 +147,7 @@ header > span{
   margin-top: 30px;
   margin-bottom: 10px;
   background-color: rgb(238, 238, 238);
-  /*border-radius: 20px;*/
+  border-radius: 5px;
   /*position: relative;*/
    word-wrap:break-all;
 }
@@ -164,4 +164,18 @@ footer{
   text-align: center;
   bottom: 0px;
   color: white;
+}
+
+.shareButton{
+    background: rgb(105, 194, 251);
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    color: white;
+    padding: 10px 0;
+    margin-right: 20px;
+    margin-top: 10px;
+    width: 150px;
+    /*width: 100%;*/
 }

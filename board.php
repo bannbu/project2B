@@ -11,7 +11,7 @@ sessionProtect($_SESSION["userID"]);
   <meta charset="utf-8" />
   <!-- <link rel="stylesheet" href="./CSS/board.css"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link href="./CSS/boardMobile.css" rel="stylesheet" type="text/css" media="screen and (min-width: 320px) and (max-width:480px)" >
+  <link href="./CSS/boardMobile.css" rel="stylesheet" type="text/css" media="screen and (max-width:480px)" >
   <link href="./CSS/board.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" >
   <script src="./JS/jquery-2.1.3.js"></script>
   <script src="./JS/tool.js"></script>
@@ -36,8 +36,8 @@ $(function(){
 <body>
 <header>
   <nav class="navFlex" name="top">
-    <a href="#">マイページ</a>
-    <a href="board.php">タイムライン</a>
+    <!-- <a href="#">マイページ</a>
+    <a href="board.php">タイムライン</a> -->
     <?php
     echo "<span>ログイン中:".$_SESSION["userID"]."</span>";
       ?>
