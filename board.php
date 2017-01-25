@@ -50,7 +50,7 @@ $(function(){
       <!-- <form action="CommentController.php" method="post"> -->
         <ul>
           <li>
-            <textarea class="inputForm" name="typeBoard" placeholder="ここに入力"></textarea>
+            <textarea class="inputForm" name="typeBoard" placeholder="ここに入力(Shift+Enterでも投稿可能)" maxlength="50"></textarea>
           </li>
           <li>
             <!-- <input type="submit" value="送信" class="goReplyPage"/> -->
