@@ -47,19 +47,16 @@ $(function(){
 <div class="wrapper">
   <div class="timeLineWrapper">
     <div class="typeText">
-      <!-- <form action="CommentController.php" method="post"> -->
-        <ul>
-          <li>
-            <textarea class="inputForm" name="typeBoard" placeholder="ここに入力(Shift+Enterでも投稿可能)" ></textarea>
-          </li>
-          <li>
-            <!-- <input type="submit" value="送信" class="goReplyPage"/> -->
-            <input type="button" class="sendText" onclick="sendComment()" value="送信"/>
-          </li>
-          </ul>
-      <!-- </form> -->
-      <div class="showError">
-      </div>
+      <ul>
+        <li>
+          <textarea class="inputForm" name="typeBoard" placeholder="ここに入力(Shift+Enterでも投稿可能)" ></textarea>
+        </li>
+        <li>
+          <input type="button" class="sendText" onclick="sendComment()" value="送信"/>
+        </li>
+      </ul>
+    <div class="showError">
+    </div>
     </div>
     <!-- <div id="notice">
 
@@ -68,7 +65,6 @@ $(function(){
 <?php
     $timeLineData = searchTimeLine();
     foreach ($timeLineData as $r) {
-      // $num = commentCount($r["content_id"]);
         if($r['content_id'] != null){
           $num = commentCount($r["content_id"]);
           // var_dump($num);
@@ -82,7 +78,6 @@ $(function(){
               echo $r["contentData"];
             echo '</div>';
             echo '<div class="goReplyPage">';
-              // echo '<a href="replyBoard.php?content_id='.$r["content_id"].'">返信画面へ移動する</a>';
               echo '<input type="button" class="link btn" onclick="linkToReplyPage('.$r["content_id"].')" value = "返信画面へ移動">';
               echo '<input type="button"  class="link btn replyDisplay'.$r["content_id"].'" name="'.$r["content_id"].'" onclick="showReply('.$r["content_id"].','.$num["count"].')" value="'.$num["count"].'件の返信">';
               echo '<div class="add'.$r["content_id"].'">';

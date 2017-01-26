@@ -24,14 +24,6 @@ body{
 
 .navFlex{
   color: white;
-  /*width: 30%;*/
-  /*position: fixed;*/
-  /*display: flex;*/
-  /*font-size: 16px;*/
-  /*text-align: right;*/
-  /*float: left;*/
-  /*background-color: rgb(208, 232, 226);*/
-  /*background-color: white;*/
 }
 .navFlex a{
   color: white;
@@ -47,10 +39,7 @@ body{
   margin-top: 10px;
   margin-left: auto;
   margin-right: auto;
-  /*float: right;*/
-  /*background-color: rgb(16, 221, 241);*/
-  /*background-color: white;*/
-  /*position: relative;*/
+
 }
 .timeLineWrapper:before {
     content: "";
@@ -67,8 +56,6 @@ body{
   margin-top: 30px;
   /*margin-left: 20px;*/
   background-color: white;
-  /*margin-left: auto;
-  margin-right: auto;*/
   border-radius: 20px;
   border: none;
   /*border: 1px solid black;*/
@@ -104,13 +91,8 @@ body{
 .content{
   /*width: 90%;*/
   padding: 20px;
-  /*margin: 15px;*/
   margin-top: 50px;
-  /*background-color: rgb(51, 0, 255);*/
   background-color: white;
-  /*margin-top: 10px;*/
-  /*margin-left: auto;
-  margin-right: auto;*/
   border-radius: 20px;
   /*border: 1px solid black;*/
   font-size: 18px;

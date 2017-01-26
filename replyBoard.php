@@ -9,7 +9,6 @@ sessionProtect($_SESSION["userID"]);
 <head>
   <title>返信ページ</title>
   <meta charset="utf-8" />
-  <!-- <link rel="stylesheet" href="./CSS/replyBoard.css"> -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link href="./CSS/replyBoardMobile.css" rel="stylesheet" type="text/css" media="screen and (max-width:480px)" >
   <link href="./CSS/replyBoard.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" >
@@ -55,7 +54,6 @@ sessionProtect($_SESSION["userID"]);
         </div>
           <hr>
         <div class="textContent">
-        <!-- <br /> -->
           <?php
           echo $r["contentData"];
         }//foreach文を閉じる
@@ -93,20 +91,17 @@ sessionProtect($_SESSION["userID"]);
   ?>
     </div>
     <div class="typeText">
-      <!-- <form action="returnCommentController.php" method="post"> -->
-        <input type="hidden" name="content_id" value="<?php echo($_GET['content_id']); ?>">
+      <input type="hidden" name="content_id" value="<?php echo($_GET['content_id']); ?>">
         <ul>
           <li>
             <textarea class="inputForm" name="rTypeBoard" placeholder="ここに返信を入力(Shift+Enterでも投稿可能)"></textarea>
           </li>
           <li>
-            <!-- <input type="submit" value="送信" class="goReplyPage"/> -->
             <input type="button" class="sendText" onclick='sendReply(<?php echo $_GET["content_id"]; ?>)' value="送信"/>
           </li>
         </ul>
         <div class="showError">
         </div>
-      <!-- </form> -->
   </div>
   <a href="board.php">コメント一覧に戻る</a>
 </div>

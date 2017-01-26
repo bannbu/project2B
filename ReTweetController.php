@@ -4,7 +4,6 @@ session_start();
 sessionProtect($_SESSION["userID"]);
 
 
-
 $content_id = $_POST["returnContentID"];//ここ直してください
 $return_id = $_POST["returnCommentID"];//ここ直してください
 $userID = $_SESSION["userID"];

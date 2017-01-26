@@ -9,9 +9,6 @@ sessionProtect($_SESSION["userID"]);
 
 	$content = nl2br(htmlspecialchars($content,ENT_QUOTES));
 
-	// if($ContentCheck != "UTF-8"){
-	// 	$content = "";
-	// }
   $check = False;
 
 	$pattern="^(\s|　)+$";//正規表現のパターン
@@ -21,12 +18,10 @@ sessionProtect($_SESSION["userID"]);
     }
 }
 
-	// $check = addTextContent($content,$userID);
 if($check === True){
 	echo '<script>
 	          window.location.reload(true);
 	      </script>';
 	}
 	// header("Location:board.php");
-
 ?>

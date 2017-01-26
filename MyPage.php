@@ -1,3 +1,6 @@
+<!--
+    未使用 
+-->
 <?php
 session_start();
 require "tool.php";

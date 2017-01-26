@@ -4,7 +4,6 @@ require "tool.php";
 $data = searchReturnComment($_POST["data"]);
 
 $i = 1;
-// echo var_dump($data);
 
 foreach ($data as $r) {
   echo '<div class="reply">';
