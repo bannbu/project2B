@@ -12,23 +12,23 @@ sessionProtect($_SESSION["userID"]);
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link href="./CSS/replyBoardMobile.css" rel="stylesheet" type="text/css" media="screen and (max-width:480px)" >
   <link href="./CSS/replyBoard.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" >
-    <script src="./JS/tool.js"></script>
-    <script src="./JS/jquery-2.1.3.js"></script>
-    <script>
-    $(function(){
-      $(".inputForm").keypress(function(e){
-        if(e.shiftKey){
-          console.log("shift");
-          if(e.which == 13){
-            var id = $("[name = content_id]").val();
-            // console.log(id);
-            sendReply(id);
-            return false;
-          }
+  <script src="./JS/replyBoard.js"></script>
+  <script src="./JS/jquery-2.1.3.js"></script>
+  <script>
+  $(function(){
+    $(".inputForm").keypress(function(e){
+      if(e.shiftKey){
+        console.log("shift");
+        if(e.which == 13){
+          var id = $("[name = content_id]").val();
+          // console.log(id);
+          sendReply(id);
+          return false;
         }
-      });
+      }
     });
-    </script>
+  });
+  </script>
 </head>
 <body>
 <header>
@@ -44,7 +44,6 @@ sessionProtect($_SESSION["userID"]);
   <div class="timeLineWrapper">
     <div class="content">
         <div class="accountInfo">
-
       <?php
           $data = titleView($_GET["content_id"]);
           if($data !== null){

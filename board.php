@@ -14,7 +14,6 @@ sessionProtect($_SESSION["userID"]);
   <link href="./CSS/boardMobile.css" rel="stylesheet" type="text/css" media="screen and (max-width:480px)" >
   <link href="./CSS/board.css" rel="stylesheet" type="text/css" media="screen and (min-width: 481px)" >
   <script src="./JS/jquery-2.1.3.js"></script>
-  <script src="./JS/tool.js"></script>
   <script src="./JS/board.js"></script>
 </head>
 <script>
