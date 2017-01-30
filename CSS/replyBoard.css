@@ -128,6 +128,10 @@ body{
   border-radius: 5px;
   /*position: relative;*/
 }
+.reply > .textContent{
+   text-align: right;
+   padding-right: 10px;
+}
 
 /*デザイン上の改行はbrを使わないほうがよいらしいので、スタイルシート側で改行を行う*/
 .textContent:before{
@@ -145,10 +149,8 @@ body{
 
 }
 
-
 .share form{
   padding-top: 10px;
-  padding-right: 10px;
   text-align: right;
 }
 

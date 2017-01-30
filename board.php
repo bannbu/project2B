@@ -48,7 +48,7 @@ $(function(){
     <div class="typeText">
       <ul>
         <li>
-          <textarea class="inputForm" name="typeBoard" placeholder="ここに入力(Shift+Enterでも投稿可能)" ></textarea>
+          <textarea class="inputForm" name="typeBoard" placeholder="ここに入力" ></textarea>
         </li>
         <li>
           <input type="button" class="sendText" onclick="sendComment()" value="送信"/>

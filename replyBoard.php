@@ -93,7 +93,7 @@ sessionProtect($_SESSION["userID"]);
       <input type="hidden" name="content_id" value="<?php echo($_GET['content_id']); ?>">
         <ul>
           <li>
-            <textarea class="inputForm" name="rTypeBoard" placeholder="ここに返信を入力(Shift+Enterでも投稿可能)"></textarea>
+            <textarea class="inputForm" name="rTypeBoard" placeholder="ここに返信を入力"></textarea>
           </li>
           <li>
             <input type="button" class="sendText" onclick='sendReply(<?php echo $_GET["content_id"]; ?>)' value="送信"/>

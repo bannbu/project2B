@@ -143,6 +143,11 @@ header > span{
   /*position: relative;*/
    word-wrap:break-all;
 }
+.reply > .textContent{
+   text-align: right;
+   padding-right: 10px;
+}
+
 
 .textContent{
   margin-bottom: 20px;
