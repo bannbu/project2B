@@ -79,7 +79,7 @@ try{
 
 	$c = $conn->query("SELECT COUNT(content_id) AS count FROM textcontent");
   $count = $c->fetch();
-  	if($count["count"] >= 5){//50件に達したら一つ削除
+  	if($count["count"] >= 50){//50件に達したら一つ削除
   		contentDelete($conn);//データ一件削除
   	}
 
