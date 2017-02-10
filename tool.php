@@ -120,7 +120,7 @@ function addReturnComment($content_id,$personalData,$returnContent){//五十件�
 	//$conn ->exec("INSERT INTO textcontent VALUES(NULL,'$Content','$date','$userID')");//コメント挿入
 
 
-  $c = $conn->query("SELECT COUNT(returnContent_id) AS count FROM returntextDB");
+  $c = $conn->query("SELECT COUNT(returnContent_id) AS count FROM returntextDB WHERE returnContent_id = $content_id");
   $count = $c->fetch();
     if($count["count"] <= 49){//50件に達したら一つ削除
       $statment=$conn->prepare(
